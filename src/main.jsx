@@ -1,5 +1,18 @@
 import { render } from 'preact'
-import { App } from './app'
+import Router from 'preact-router';
+import AsyncRoute from 'preact-async-route';
+import { Home } from './pages/home';
+import { About } from './pages/about';
+import { Posts } from './pages/posts';
 import './index.css'
 
-render(<App />, document.getElementById('app'))
+
+const Main = () => (
+
+    <Router>
+        <Home path='/' />
+        <About path='/about' />
+        <Posts path='/post/:Num' />
+    </Router>
+)
+render(<Main />, document.getElementById('app'))
