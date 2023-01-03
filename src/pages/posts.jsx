@@ -9,13 +9,18 @@ export function Posts() {
 
 
   useEffect(() => {
-        async function Posts() {
-          setPosts(await getPosts())
-        }
+    async function Posts() {
+      setPosts(await getPosts())
+    }
+    
+    async function LoadPkg() {
+      const { BG } = await import("../components/3dBG")
+      BG()
+    }
 
-        BG()
-        Posts()
-    }, []);
+    LoadPkg()
+    Posts()
+  }, []);
 
   return (
     <>

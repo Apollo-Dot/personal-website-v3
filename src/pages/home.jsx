@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'preact/hooks'
 import { NavBar } from "../components/navbar"
-import { BG } from "../components/3dBG"
 import { PostCard } from '../components/card'
 import { getPosts } from '../api/supabase-config'
 
@@ -21,7 +20,12 @@ export function Home(props) {
             setPostBody(posts[0].body)
         }
 
-        BG()
+        async function LoadPkg(){
+            const { BG } = await import("../components/3dBG")
+            BG()
+        }
+
+        LoadPkg()
         Posts()
     }, []);
 
