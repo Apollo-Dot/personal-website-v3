@@ -2,11 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+body {
     @apply bg-slate-800
 }
 
-#bg{
+#bg {
     @apply fixed top-0 left-0 -z-10
 }
 
@@ -31,12 +31,19 @@ main {
     width: 100%;
     margin: 0px auto;
     padding: 120px 0px;
-    
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
 }
 
-h1, h2, h3, blockquote {
+@media (min-width: 640px) {
+    main {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+    }
+}
+
+h1,
+h2,
+h3,
+blockquote {
     font-family: elevon, sans-serif;
     font-weight: 700;
     font-style: normal;
