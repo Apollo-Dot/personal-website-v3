@@ -25,10 +25,12 @@ export function Post(props) {
     return (
         <>
             <NavBar />
-            <h1 className="text-white text-2xl">{postId}</h1>
-            <h1 className="text-white text-2xl">{postTitle}</h1>
-            <h2 className="text-white text-xl">{postHeader}</h2>
-            <p className="text-white">{postBody}</p>
+            <div className="text-center flex flex-col">
+                <h1 className="text-white text-4xl">{postTitle}</h1>
+                <h2 className="text-white text-xl">{postHeader}</h2>
+                <br/>
+                <p className="text-white">{postBody}</p>
+            </div>
         </>
     )
 }
