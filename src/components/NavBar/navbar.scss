@@ -1,0 +1,12 @@
+@import "../../vars.scss";
+
+#NavBar_Warper {
+    position: relative;
+    background-color: $base-color;
+    color: #ffffff;
+    width: 100vw;
+    height: 3rem;
+    border-bottom-style: solid;
+    border-bottom-width: 0.5rem;
+    border-color: $base-ascent-color;
+}
