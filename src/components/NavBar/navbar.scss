@@ -5,8 +5,34 @@
     background-color: $base-color;
     color: #ffffff;
     width: 100vw;
-    height: 3rem;
     border-bottom-style: solid;
-    border-bottom-width: 0.5rem;
+    border-bottom-width: 0.4rem;
     border-color: $base-ascent-color;
+
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    nav {
+        margin: auto;
+        width: fit-content;
+        padding: 10px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+    
+    .NavTab {
+        padding: 0.5rem;
+        color: #ffffff;
+    }
+
+    .active {
+        background-color: $base-ascent-color;
+        border-style: inset;
+        border-width: 0.4rem;
+        border-color: $light-base-ascent-color;
+    }
 }
