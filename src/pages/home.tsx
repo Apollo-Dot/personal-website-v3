@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'preact/hooks'
-import { SceneInit } from './lib/ThreeSceneInit'
-import './app.scss'
+import { SceneInit } from '../lib/ThreeSceneInit'
+import './home.scss'
 
-import { NavBar } from './components/NavBar/navbar'
+import { NavBar } from '../components/NavBar/navbar'
 import * as THREE from 'three';
 
-export function App() {
+export function Home() {
   const [count, setCount] = useState(0)
 
   // Scroll Animation
@@ -21,12 +21,6 @@ export function App() {
 
     threeCore.scene!.add(boxMesh);
 
-
-    // Trigger your effect
-    window.addEventListener('resize', threeCore.onWindowResize);
-    return () => {
-      window.removeEventListener('resize', threeCore.onWindowResize);
-    };
   }, []);
 
   return (

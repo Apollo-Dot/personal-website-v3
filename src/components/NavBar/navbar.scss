@@ -26,12 +26,14 @@
     
     .NavTab {
         padding: 0.5rem;
+        margin: 0.4rem;
         color: #ffffff;
     }
 
     .active {
         background-color: $base-ascent-color;
         border-style: inset;
+        margin: 0rem;
         border-width: 0.4rem;
         border-color: $light-base-ascent-color;
     }
