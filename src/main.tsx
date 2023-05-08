@@ -1,21 +1,5 @@
-// @ts-nocheck
 import { render } from 'preact'
-import Router from 'preact-router';
-import { Home } from './pages/home'
-import { About } from './pages/about';
-import './index.scss'
-import { NavBar } from './components/NavBar/navbar';
+import { App } from './app.tsx'
+import './index.css'
 
-const Main = () => (
-    <>
-    <NavBar />
-    
-    <Router>
-        <Home path="/" />
-        <About path="/about" />
-    </Router>
-    
-    </>
-);
-
-render(<Main />, document.getElementById('app') as HTMLElement)
+render(<App />, document.getElementById('app') as HTMLElement)
