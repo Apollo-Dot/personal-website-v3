@@ -43,7 +43,6 @@ function setup(canvas: HTMLCanvasElement) {
 
     renderer = new THREE.WebGLRenderer({
         canvas: canvas,
-        antialias: true,
     });
 
     renderer.setPixelRatio(window.devicePixelRatio);
