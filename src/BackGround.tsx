@@ -56,9 +56,9 @@ function setup(canvas: HTMLCanvasElement) {
     const spaceTexture = new THREE.CubeTextureLoader()
         .setPath('/skybox/')
         .load([
-            'right.png', 'left.png',
-            'top.png', 'bottom.png',
-            'front.png', 'back.png'
+            'right.webp', 'left.webp',
+            'top.webp', 'bottom.webp',
+            'front.webp', 'back.webp'
         ])
     spaceTexture.colorSpace = THREE.SRGBColorSpace
     scene.background = spaceTexture;
