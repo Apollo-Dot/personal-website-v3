@@ -81,6 +81,7 @@ function setup(canvas: HTMLCanvasElement) {
     // Avatar
 
     const riverTexture = new THREE.TextureLoader().load('/avatar.png');
+    riverTexture.colorSpace = THREE.SRGBColorSpace
     river = new THREE.Mesh(
         new THREE.BoxGeometry(3, 3, 3),
         new THREE.MeshBasicMaterial({ map: riverTexture })

@@ -25,11 +25,11 @@ export function App() {
           </p>
         </RightCard>
 
-        <LeftCard heading="Projects">
+        <LeftCard heading="🔧 Projects 🥽">
 
         </LeftCard>
 
-        <RightCard heading="Skills">
+        <RightCard heading="🦾 Skills 👓">
 
         </RightCard>
 
