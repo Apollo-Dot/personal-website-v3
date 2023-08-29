@@ -11,7 +11,7 @@ let camera: THREE.PerspectiveCamera, scene: THREE.Scene, renderer: THREE.WebGLRe
 let estrogen: THREE.Group, river: THREE.Mesh;
 const offset = new THREE.Vector3();
 
-export function BG() {
+export function HomeBG() {
 
     useEffect(() => {
         const canvasBG: any = document.getElementById("bg")
@@ -28,8 +28,6 @@ export function BG() {
             <canvas class="-z-50 fixed top-0 left-0" id="bg" />
         </>
     )
-
-
 }
 
 

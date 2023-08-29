@@ -1,17 +1,14 @@
-import { BG } from "./BackGround"
+import { HomeBG } from "./components/HomeBG"
 import { TitleCard, RightCard, LeftCard } from "./components/cards"
+import { NavBar } from "./components/navbar/navbar"
 
 export function App() {
 
   return (
     <>
-      <BG />
-      <div class={"bg-yellow-400 w-screen p-2"}>
-        <p class={"text-slate-600 font-bold text-xl text-center"}>
-          Sorry This site is still a WIP
-        </p>
-      </div>
-      <div class="grid grid-cols-[repeat(12,1fr)] w-screen w-full absolute mx-auto my-0 px-0 py-36">
+      <HomeBG />
+      <NavBar />
+      <div class="grid grid-cols-[repeat(12,1fr)] w-screen w-full absolute mx-auto my-0 px-0 py-36 ml-16">
         <TitleCard title="Welcome To My Website" subTitle="And Portfolio" />
         <RightCard heading="✨ About Me ✨">
           <p class="text-gray-300 text-lg">

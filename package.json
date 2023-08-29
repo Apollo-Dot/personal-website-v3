@@ -9,21 +9,26 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "preact": "^10.13.1",
+    "preact": "^10.17.1",
+    "preact-router": "^4.1.2",
+    "react": "npm:@preact/compat",
+    "react-dom": "npm:@preact/compat",
+    "react-icons": "^4.10.1",
+    "react-router-dom": "^6.15.0",
     "tailwind-scrollbar-hide": "^1.1.7",
-    "three": "^0.152.2",
+    "three": "^0.155.0",
     "trianglify": "^4.1.1"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^5.0.0",
     "@preact/preset-vite": "^2.5.0",
-    "@types/three": "^0.152.0",
+    "@types/three": "^0.155.1",
     "@types/trianglify": "^1.2.1",
-    "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.23",
-    "tailwindcss": "^3.3.2",
-    "typescript": "^5.0.2",
-    "vite": "^4.3.2",
-    "vite-plugin-pwa": "^0.14.7"
+    "autoprefixer": "^10.4.15",
+    "postcss": "^8.4.28",
+    "tailwindcss": "^3.3.3",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.9",
+    "vite-plugin-pwa": "^0.16.4"
   }
 }
