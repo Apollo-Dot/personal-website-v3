@@ -8,7 +8,7 @@ export function App() {
     <>
       <HomeBG />
       <NavBar />
-      <div class="grid grid-cols-[repeat(12,1fr)] w-screen w-full absolute mx-auto my-0 px-0 py-36 ml-16">
+      <div class="grid grid-cols-[repeat(12,1fr)] w-screen w-full absolute mx-auto my-0 px-0 py-36 pl-16">
         <TitleCard title="Welcome To My Website" subTitle="And Portfolio" />
         <RightCard heading="✨ About Me ✨">
           <p class="text-gray-300 text-lg">

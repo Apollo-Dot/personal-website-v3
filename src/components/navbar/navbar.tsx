@@ -1,6 +1,7 @@
 import { GoHomeFill } from 'react-icons/go';
 import { FaCamera } from 'react-icons/fa';
-import { SiAdobephotoshop } from 'react-icons/si'
+import { SiAdobephotoshop } from 'react-icons/si';
+import { BiSolidGame } from 'react-icons/bi';
 
 
 export function NavBar() {
@@ -11,8 +12,10 @@ export function NavBar() {
 
             <SideBarIcon icon={<GoHomeFill size="28" />} text='🏠 Home' />
             <Divider />
-            <SideBarIcon icon={<FaCamera size="28" />} text='📷 Photography' url='/photography'/>
-            <SideBarIcon icon={<SiAdobephotoshop size="25" />} text='📷 Photoshop' />
+            <SideBarIcon icon={<BiSolidGame size="28" />} text='🕹️ My Games (WIP)' />
+            <Divider />
+            <SideBarIcon icon={<FaCamera size="28" />} text='📷 Photography (WIP)' url='/photography'/>
+            <SideBarIcon icon={<SiAdobephotoshop size="25" />} text='📷 Photoshop (WIP)' />
         </div>
     )
 }

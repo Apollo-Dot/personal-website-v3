@@ -8,7 +8,7 @@ export function Photography() {
             <PhotographyBG/>
             <NavBar />
             
-            <div class="ml-16">
+            <div class="pl-16">
                 Hello World
             </div>
         </>
