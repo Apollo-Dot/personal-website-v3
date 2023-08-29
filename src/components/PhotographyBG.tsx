@@ -2,13 +2,8 @@ import { useEffect } from 'preact/hooks';
 
 import * as THREE from 'three'
 
-import { PDBLoader } from 'three/addons/loaders/PDBLoader.js';
-
-
-const pdbLoader = new PDBLoader();
-
 let camera: THREE.PerspectiveCamera, scene: THREE.Scene, renderer: THREE.WebGLRenderer;
-const offset = new THREE.Vector3();
+//const offset = new THREE.Vector3();
 
 export function PhotographyBG() {
 
@@ -43,7 +38,7 @@ function setup(canvas: HTMLCanvasElement) {
     renderer.setSize(window.innerWidth, window.innerHeight);
     camera.position.setZ(30);
     camera.position.setX(-3);
-    camera.rotation.y = 180
+    camera.rotation.y = 90
 
     renderer.render(scene, camera);
 

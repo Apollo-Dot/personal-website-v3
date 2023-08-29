@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "preact": "^10.17.1",
+    "preact-async-route": "^2.2.1",
     "preact-router": "^4.1.2",
     "react": "npm:@preact/compat",
     "react-dom": "npm:@preact/compat",
