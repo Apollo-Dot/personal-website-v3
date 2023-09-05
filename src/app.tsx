@@ -1,4 +1,3 @@
-import { HomeBG } from "./components/HomeBG"
 import { TitleCard, RightCard, LeftCard } from "./components/cards"
 import { NavBar } from "./components/navbar/navbar"
 
