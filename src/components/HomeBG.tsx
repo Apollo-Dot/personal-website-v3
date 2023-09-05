@@ -11,6 +11,16 @@ let camera: THREE.PerspectiveCamera, scene: THREE.Scene, renderer: THREE.WebGLRe
 let estrogen: THREE.Group, river: THREE.Mesh;
 const offset = new THREE.Vector3();
 
+let path: string = "/"
+
+export function updatePath(newPath: string) {
+    console.log(newPath)
+    path = newPath;
+    if (camera != null) {
+        changeScene()
+    }
+}
+
 export function HomeBG() {
 
     useEffect(() => {
@@ -137,6 +147,20 @@ function render() {
 
     renderer.render(scene, camera);
 
+}
+
+function changeScene() {
+    switch (path) {
+        case "/":
+            camera.rotation.y = 0
+            break;
+        case "/games":
+            camera.rotation.y = -90
+            break;
+        case "/photography":
+            camera.rotation.y = 150
+            break;
+    }
 }
 
 

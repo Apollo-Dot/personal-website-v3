@@ -12,7 +12,7 @@ export function NavBar() {
 
             <SideBarIcon icon={<GoHomeFill size="28" />} text='🏠 Home' />
             <Divider />
-            <SideBarIcon icon={<BiSolidGame size="28" />} text='🕹️ My Games (WIP)' />
+            <SideBarIcon icon={<BiSolidGame size="28" />} text='🕹️ My Games (WIP)' url='/games' />
             <Divider />
             <SideBarIcon icon={<FaCamera size="28" />} text='📷 Photography (WIP)' url='/photography'/>
             <SideBarIcon icon={<SiAdobephotoshop size="25" />} text='📷 Photoshop (WIP)' />

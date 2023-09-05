@@ -6,7 +6,6 @@ export function App() {
 
   return (
     <>
-      <HomeBG />
       <NavBar />
       <div class="grid grid-cols-[repeat(12,1fr)] w-screen w-full absolute mx-auto my-0 px-0 py-36 pl-16">
         <TitleCard title="Welcome To My Website" subTitle="And Portfolio" />
@@ -23,7 +22,11 @@ export function App() {
         </RightCard>
 
         <LeftCard heading="🔧 Projects 🥽">
-
+          <div class="m-6">
+            <ul class="text-gray-300 text-lg list-disc">
+              <li>Dino Jam 2023 (On Going)</li>
+            </ul>
+          </div>
         </LeftCard>
 
         <RightCard heading="🦾 Skills 👓">
