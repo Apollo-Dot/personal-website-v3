@@ -1,11 +1,9 @@
 import { TitleCard, RightCard, LeftCard } from "./components/cards"
-import { NavBar } from "./components/navbar/navbar"
 
 export function App() {
 
   return (
     <>
-      <NavBar />
       <div class="grid grid-cols-[repeat(12,1fr)] w-screen w-full absolute mx-auto my-0 px-0 py-36 pl-16">
         <TitleCard title="Welcome To My Website" subTitle="And Portfolio" />
         <RightCard heading="✨ About Me ✨">

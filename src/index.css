@@ -41,11 +41,3 @@
     mx-2;
   }
 }
-
-::-webkit-scrollbar {
-  background-color: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  @apply bg-gray-500 dark:bg-green-400;
-}

@@ -4,6 +4,8 @@ import AsyncRoute from 'preact-async-route';
 import { App } from './app.tsx'
 import './index.css'
 import { HomeBG, updatePath } from './components/HomeBG.tsx';
+import { NavBar } from './components/navbar/navbar.tsx';
+import { ReloadPrompt } from './ReloadPrompt.tsx';
 //import { Photography } from './pages/Photography/photography.tsx';
 
 function Core() {
@@ -24,6 +26,8 @@ function Core() {
     return (
         <>
             <HomeBG />
+            <NavBar />
+            <ReloadPrompt />
             <Router onChange={handleRoute}>
                 <App path="/" />
                 <AsyncRoute
