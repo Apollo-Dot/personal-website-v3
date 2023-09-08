@@ -1,0 +1,1 @@
+import{o}from"./index-87c88f1a.js";import{k as r}from"./preact-8cfcf72f.js";import"./preact-router-a9b29072.js";import"./vendor-0b6b5afa.js";import"./preact-async-route-270d6121.js";import"./three-d22827c1.js";import"./react-icons-8efa295f.js";function u(){return o(r,{})}export{u as Games};

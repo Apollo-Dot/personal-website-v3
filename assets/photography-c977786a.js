@@ -1,1 +1,0 @@
-import{o as r,N as o}from"./index-b5e51633.js";import{k as i}from"./preact-8cfcf72f.js";import"./preact-router-931d4098.js";import"./vendor-f7fc5a4a.js";import"./preact-async-route-270d6121.js";import"./react-icons-52cbea96.js";import"./three-d22827c1.js";function c(){return r(i,{children:[r(o,{}),r("div",{class:"pl-16",children:"Hello World"})]})}export{c as Photography};
