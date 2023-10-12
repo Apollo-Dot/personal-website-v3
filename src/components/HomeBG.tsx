@@ -4,12 +4,19 @@ import * as THREE from 'three'
 
 import { PDBLoader } from 'three/addons/loaders/PDBLoader.js';
 
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { color } from 'three/examples/jsm/nodes/Nodes.js';
 
 const pdbLoader = new PDBLoader();
 
 let camera: THREE.PerspectiveCamera, scene: THREE.Scene, renderer: THREE.WebGLRenderer;
 let estrogen: THREE.Group, river: THREE.Mesh;
+let game1: THREE.Mesh;
+let sceneObjects: THREE.Group;
+let controls: OrbitControls;
 const offset = new THREE.Vector3();
+
+const debugCam = false;
 
 let path: string = "/"
 
@@ -29,8 +36,11 @@ export function HomeBG() {
         setup(canvasBG)
         animate();
 
-        document.body.onscroll = moveCamera;
-        moveCamera();
+        if (!debugCam) {
+            document.body.onscroll = moveCamera;
+            moveCamera();
+        }
+
     })
 
     return (
@@ -46,7 +56,9 @@ export function HomeBG() {
 function setup(canvas: HTMLCanvasElement) {
     // Setup
     scene = new THREE.Scene();
+    sceneObjects = new THREE.Group();
 
+    // Main Renderer
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
     renderer = new THREE.WebGLRenderer({
@@ -55,7 +67,7 @@ function setup(canvas: HTMLCanvasElement) {
 
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
-    camera.position.setZ(30);
+    //camera.position.setZ(30);
     camera.position.setX(-3);
 
     renderer.render(scene, camera);
@@ -80,26 +92,10 @@ function setup(canvas: HTMLCanvasElement) {
     light2.position.set(- 1, - 1, 1);
     scene.add(light2);
 
-    // estrogen molecule
-    estrogen = new THREE.Group();
-    estrogen.scale.set(0.05, 0.05, 0.05)
-    estrogen.position.set(-30, 0, -50)
-    scene.add(estrogen);
-
-    // Avatar
-
-    const riverTexture = new THREE.TextureLoader().load('/avatar.png');
-    riverTexture.colorSpace = THREE.SRGBColorSpace
-    river = new THREE.Mesh(
-        new THREE.BoxGeometry(3, 3, 3),
-        new THREE.MeshBasicMaterial({ map: riverTexture })
-    );
-    river.position.z = -8;
-    river.position.x = 4;
-    scene.add(river);
-
-
-    loadMolecule("estrogen.pdb");
+    if (debugCam){
+        controls = new OrbitControls(camera, renderer.domElement);
+    }
+    changeScene();
 
     window.addEventListener('resize', onWindowResize);
 }
@@ -129,38 +125,91 @@ function moveCamera() {
 
 function animate() {
 
-    requestAnimationFrame(animate);
-
     const time = Date.now() * 0.0004;
 
-    estrogen.rotation.y = time;
+    switch (path) {
+        case "/":
+            estrogen.rotation.y = time;
 
-    river.rotation.y = time;
-    river.rotation.x = time * 2
-    river.rotation.z = time * 0.5
+            river.rotation.y = time;
+            river.rotation.x = time * 2
+            river.rotation.z = time * 0.5
+            break;
+        case "/games":
+            game1.rotation.y = time;
+            break;
+
+        default:
+            break;
+    }
+
+    if (debugCam) {
+        controls.update();
+    }
 
     render();
 
 }
 
 function render() {
+    requestAnimationFrame(animate);
 
     renderer.render(scene, camera);
 
 }
 
 function changeScene() {
+    sceneObjects.clear();
     switch (path) {
         case "/":
+            setupHome()
             camera.rotation.y = 0
             break;
         case "/games":
+            setupGames()
             camera.rotation.y = -90
             break;
         case "/photography":
             camera.rotation.y = 150
             break;
     }
+}
+
+function setupHome() {
+    // estrogen molecule
+    estrogen = new THREE.Group();
+    estrogen.scale.set(0.05, 0.05, 0.05)
+    estrogen.position.set(-30, 0, -50)
+    sceneObjects.add(estrogen);
+
+    // Avatar
+
+    const riverTexture = new THREE.TextureLoader().load('/avatar.png');
+    riverTexture.colorSpace = THREE.SRGBColorSpace
+    river = new THREE.Mesh(
+        new THREE.BoxGeometry(3, 3, 3),
+        new THREE.MeshBasicMaterial({ map: riverTexture })
+    );
+    river.position.z = -8;
+    river.position.x = 4;
+    sceneObjects.add(river);
+
+    scene.add(sceneObjects)
+
+    render();
+    loadMolecule("estrogen.pdb");
+}
+
+function setupGames() {
+    const game1Texture = new THREE.TextureLoader().load('https://placehold.co/1280x720/png')
+    game1 = new THREE.Mesh(
+        new THREE.PlaneGeometry(16, 9),
+        new THREE.MeshBasicMaterial({ map: game1Texture, color: '#FFFFFF' })
+    );
+    game1.position.set(-4, 0, -8)
+    sceneObjects.add(game1);
+
+    render();
 }
 
 
