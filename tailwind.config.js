@@ -5,7 +5,13 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        "VT323": ['VT323', 'monospace'],
+        "PermanentMarker": ['Permanent Marker', 'cursive'],
+        "Orbitron": ['Orbitron', 'sans-serif']
+      }
+    },
   },
   plugins: [
     require('tailwind-scrollbar-hide')
