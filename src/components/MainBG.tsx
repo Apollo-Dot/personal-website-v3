@@ -3,9 +3,9 @@ import { useEffect } from 'preact/hooks';
 import * as THREE from 'three'
 
 import { PDBLoader } from 'three/addons/loaders/PDBLoader.js';
-
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { color } from 'three/examples/jsm/nodes/Nodes.js';
+
 
 const pdbLoader = new PDBLoader();
 
@@ -28,7 +28,7 @@ export function updatePath(newPath: string) {
     }
 }
 
-export function HomeBG() {
+export function MainBG() {
 
     useEffect(() => {
         const canvasBG: any = document.getElementById("bg")
@@ -36,11 +36,8 @@ export function HomeBG() {
         setup(canvasBG)
         animate();
 
-        if (!debugCam) {
-            document.body.onscroll = moveCamera;
-            moveCamera();
-        }
-
+        document.body.onscroll = moveCamera;
+        moveCamera();
     })
 
     return (
@@ -92,7 +89,7 @@ function setup(canvas: HTMLCanvasElement) {
     light2.position.set(- 1, - 1, 1);
     scene.add(light2);
 
-    if (debugCam){
+    if (debugCam) {
         controls = new OrbitControls(camera, renderer.domElement);
     }
     changeScene();
@@ -197,7 +194,7 @@ function setupHome() {
     scene.add(sceneObjects)
 
     render();
-    loadMolecule("estrogen.pdb");
+    loadMolecule("estrogen.pdb", estrogen);
 }
 
 function setupGames() {
@@ -212,14 +209,13 @@ function setupGames() {
     render();
 }
 
-
-function loadMolecule(model: string) {
+function loadMolecule(model: string, group: THREE.Group) {
 
     const url = 'models/' + model;
 
-    while (estrogen.children.length > 0) {
+    while (group.children.length > 0) {
 
-        const object = estrogen.children[0];
+        const object = group.children[0];
         object.parent?.remove(object);
 
     }
@@ -261,7 +257,7 @@ function loadMolecule(model: string) {
             object.position.copy(position);
             object.position.multiplyScalar(75);
             object.scale.multiplyScalar(25);
-            estrogen.add(object);
+            group.add(object);
 
             const atom = json.atoms[i];
 
@@ -295,7 +291,7 @@ function loadMolecule(model: string) {
             object.position.lerp(end, 0.5);
             object.scale.set(5, 5, start.distanceTo(end));
             object.lookAt(end);
-            estrogen.add(object);
+            group.add(object);
 
         }
 
