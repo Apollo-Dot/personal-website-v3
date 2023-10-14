@@ -78,47 +78,47 @@ define(['./workbox-5357ef54'], (function (workbox) { 'use strict';
    * See https://goo.gl/S9QRab
    */
   workbox.precacheAndRoute([{
-    "url": "assets/games-699ad9b6.js",
+    "url": "assets/games-0b1fca60.js",
     "revision": null
   }, {
-    "url": "assets/index-7e464cae.css",
+    "url": "assets/index-653c27ea.css",
     "revision": null
   }, {
-    "url": "assets/index-87c88f1a.js",
+    "url": "assets/index-c106c8af.js",
     "revision": null
   }, {
-    "url": "assets/photography-e4271ac0.js",
+    "url": "assets/photography-557b02a3.js",
     "revision": null
   }, {
-    "url": "assets/preact-8cfcf72f.js",
+    "url": "assets/preact-8bd1fb94.js",
     "revision": null
   }, {
-    "url": "assets/preact-async-route-270d6121.js",
+    "url": "assets/preact-async-route-def72e5e.js",
     "revision": null
   }, {
-    "url": "assets/preact-router-a9b29072.js",
+    "url": "assets/preact-router-37738984.js",
     "revision": null
   }, {
-    "url": "assets/react-icons-8efa295f.js",
+    "url": "assets/react-icons-0bbb27ad.js",
     "revision": null
   }, {
     "url": "assets/tailwind-scrollbar-hide-4ed993c7.js",
     "revision": null
   }, {
-    "url": "assets/three-d22827c1.js",
+    "url": "assets/three-e6444450.js",
     "revision": null
   }, {
     "url": "assets/trianglify-4ed993c7.js",
     "revision": null
   }, {
-    "url": "assets/vendor-0b6b5afa.js",
+    "url": "assets/vendor-ad562a93.js",
     "revision": null
   }, {
     "url": "assets/workbox-window.prod.es5-a7b12eab.js",
     "revision": null
   }, {
     "url": "index.html",
-    "revision": "0147c7c2a5e2584334ee87b8865ada43"
+    "revision": "1b58d22c597c8a4e4793d4bf8efae130"
   }, {
     "url": "pwa-192x192.png",
     "revision": "96893efcc6915545f17894914f0be0b3"
