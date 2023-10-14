@@ -4,7 +4,7 @@ import AsyncRoute from 'preact-async-route';
 import { App } from './app.tsx'
 import './index.css'
 import { MainBG, updatePath } from './components/MainBG.tsx';
-import { NavBar } from './components/navbar/navbar.tsx';
+//import { NavBar } from './components/navbar/navbar.tsx';
 import { ReloadPrompt } from './ReloadPrompt.tsx';
 //import { Photography } from './pages/Photography/photography.tsx';
 

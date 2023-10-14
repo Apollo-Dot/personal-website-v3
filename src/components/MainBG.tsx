@@ -4,7 +4,6 @@ import * as THREE from 'three'
 
 import { PDBLoader } from 'three/addons/loaders/PDBLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import { color } from 'three/examples/jsm/nodes/Nodes.js';
 
 
 const pdbLoader = new PDBLoader();
