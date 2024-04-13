@@ -1,7 +1,7 @@
 {
-  "name": "personal-site-v7",
+  "name": "riverdot.github.io",
   "private": true,
-  "version": "7.0.0",
+  "version": "8.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,27 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "preact": "^10.17.1",
-    "preact-async-route": "^2.2.1",
-    "preact-router": "^4.1.2",
-    "react": "npm:@preact/compat",
-    "react-dom": "npm:@preact/compat",
-    "react-icons": "^4.10.1",
-    "react-router-dom": "^6.15.0",
-    "tailwind-scrollbar-hide": "^1.1.7",
-    "three": "^0.155.0",
-    "trianglify": "^4.1.1"
+    "preact": "^10.19.3"
   },
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^5.0.0",
-    "@preact/preset-vite": "^2.5.0",
-    "@types/three": "^0.155.1",
-    "@types/trianglify": "^1.2.1",
-    "autoprefixer": "^10.4.15",
-    "postcss": "^8.4.28",
-    "tailwindcss": "^3.3.3",
+    "@preact/preset-vite": "^2.8.1",
+    "@types/node": "^20.11.17",
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.35",
+    "sass": "^1.71.0",
+    "tailwindcss": "^3.4.1",
     "typescript": "^5.2.2",
-    "vite": "^4.4.9",
-    "vite-plugin-pwa": "^0.16.4"
+    "vite": "^5.1.0"
   }
 }

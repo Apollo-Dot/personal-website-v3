@@ -7,13 +7,11 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        "VT323": ['VT323', 'monospace'],
-        "PermanentMarker": ['Permanent Marker', 'cursive'],
-        "Orbitron": ['Orbitron', 'sans-serif']
-      }
+        'noto-sans': ['"Noto Sans"', 'sans-serif'],
+        'chakra-petch': ['"Chakra Petch"', 'sans-serif']
+      },
     },
   },
-  plugins: [
-    require('tailwind-scrollbar-hide')
-  ],
+  plugins: [],
 }
+
