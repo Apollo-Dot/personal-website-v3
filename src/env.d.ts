@@ -1,7 +1,2 @@
-namespace preact {
-    namespace JSX {
-        interface IntrinsicAttributes {
-            path?: string
-        }
-    }
-}
+/// <reference path="../.astro/types.d.ts" />
+/// <reference types="astro/client" />

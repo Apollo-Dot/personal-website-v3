@@ -1,0 +1,25 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  platform: string,
+  url: string
+}
+
+const { platform, url } = Astro.props;
+---
+<!-- <a rel="me" href={url} class="text-white bg-violet-900 no-underline px-4 py-2">
+  <Icon name={icon} />
+  {platform}
+</a> -->
+
+<li>
+  <a
+    rel="me"
+    href={url}
+    target="_blank"
+    class="hover:text-white"
+  >
+    {platform}
+  </a>
+</li>

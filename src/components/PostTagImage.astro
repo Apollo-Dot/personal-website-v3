@@ -1,0 +1,30 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+
+const colors = new Map([
+  ["Blog Post", ["bg-sky-500", "heropattern-hexagons-sky-100"]],
+  ["DevLog", ["bg-orange-500", "heropattern-hexagons-orange-100"]],
+  ["Info", ["bg-emerald-500", "heropattern-hexagons-emerald-100"]],
+  ["Website Change Log", ["bg-lime-500", "heropattern-floatingcogs-lime-100"]]
+]);
+const _color = colors.get(title) || ["bg-zinc-500", "heropattern-hexagons-white"];
+const priColor = _color[0];
+const secColor = _color[1];
+---
+
+<div
+  class={"flex relative aspect-19/10 sm:pb-0 w-40 max-w-80 sm:w-full overflow-hidden mb-6 shadow-md rounded-lg " +
+    priColor}
+>
+  <div class={"flex bg-repeat w-full h-full text-primary-100 " + secColor}>
+    <h1
+      class="m-auto font-bold text-center text-black select-none text-balance drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]"
+    >
+      {title}
+    </h1>
+  </div>
+</div>

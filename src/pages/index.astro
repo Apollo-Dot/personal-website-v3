@@ -1,0 +1,48 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogPostContainer from "../components/BlogPostContainer.astro";
+import BlogPost from "../components/BlogPost.astro";
+const pageTitle = "River_Dot";
+
+const allPosts = await getCollection("posts");
+const numRecent = 2;
+const recentPosts = allPosts.slice(0, numRecent);
+
+const roadMap =[
+  ["Blog Functionality", "line-through"],
+  ["Road Map", ""],
+  ["Project Showcase", ""]
+]
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <p>
+    Welcome! This is now v8 of my personal website make sure to check out the 
+    <a href="/posts/intro-post" class="underline text-pink-500">intro post</a> 
+    to learn the changes and goals for this version :3
+  </p>
+  
+  <!-- <div class="flex-grow my-2 border-b"></div>
+  <h2>Website Road Map</h2>
+
+  <ul class="list-disc list-inside">
+
+  </ul> -->
+
+  <div class="flex-grow my-2 border-b"></div>
+  <h2>Most Recent Blog Posts</h2>
+  <BlogPostContainer>
+    {
+      recentPosts.map((post) => (
+        <BlogPost
+          url={`/posts/${post.slug}/`}
+          title={post.data.title}
+          desc={post.data.description}
+          image={post.data.image}
+          titleTag={post.data.titleTag}
+        />
+      ))
+    }
+  </BlogPostContainer>
+</BaseLayout>

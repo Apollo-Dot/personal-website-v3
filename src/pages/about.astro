@@ -1,0 +1,52 @@
+---
+import Footer from "../components/Footer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/global.css";
+
+const pageTitle = "About Me";
+
+const identity = {
+  firstName: "River",
+  pronouns: "She/Her",
+  favColor: "Royal Blue",
+  email: "contact@riverdot.tech",
+  country: "Trans Someting",
+  occupation: "Gay",
+  hobbies: ["programing", "gamedev", "photography"],
+};
+
+const skills = [
+  "Godot4",
+  "Typescript & JavaScript (ES6, Deno, Node.js)",
+  "HTML",
+  "Python",
+  "Data Analysis",
+  "Data Visualization",
+  "Unity",
+  "Docker",
+  "Networking",
+];
+
+const learning = ["Rust", "CSS"];
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <p>
+    Hello my name is {identity.firstName} my pronouns are {identity.pronouns}. I'm trans and Non-Binary.<br />
+    I like making games, videos and I just enjoy programming in general.<br />
+    I also enjoy Drawing sometimes and may post what I'm working on from time to
+    time.<br />
+    My Favorite Food is Street Tacos and a bit specific but my Favorite Color is
+    {identity.favColor}.
+  </p>
+  <br />
+  <p>Some of my skills are:</p>
+  <ul class="list-disc list-inside">
+    {skills.map((skill) => <li class="">{skill}</li>)}
+  </ul>
+  <br />
+  <p>Some skills I'm learning:</p>
+  <ul class="list-disc list-inside">
+    {learning.map((learn) => <li class="">{learn}</li>)}
+  </ul>
+</BaseLayout>
