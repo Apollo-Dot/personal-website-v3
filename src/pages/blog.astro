@@ -1,0 +1,40 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogPost from "../components/BlogPost.astro";
+import BlogPostContainer from "../components/BlogPostContainer.astro";
+
+const postTopics = [
+  "Random Thoughts",
+  "Game Devlogs",
+  "New Things I'm Learning",
+  "Projects I'm Working on",
+  "and so much more!",
+];
+
+const allPosts = await getCollection("posts");
+const pageTitle = "Blog";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <p>This is where I'll post a bunch of things like:</p>
+  <ul class="list-disc list-inside">
+    {postTopics.map((postTopic) => <li class="">{postTopic}</li>)}
+  </ul>
+
+  <div class="flex-grow my-8 border-b"></div>
+
+  <BlogPostContainer>
+    {
+      allPosts.map((post) => (
+        <BlogPost
+          url={`/posts/${post.slug}/`}
+          title={post.data.title}
+          desc={post.data.description}
+          image={post.data.image}
+          titleTag={post.data.titleTag}
+        />
+      ))
+    }
+  </BlogPostContainer>
+</BaseLayout>
