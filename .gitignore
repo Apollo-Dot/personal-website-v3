@@ -49,5 +49,5 @@ pnpm-debug.log*
 .idea/
 
 ref.html
-
+Outline.md
 src/content/posts/post-test1.md
